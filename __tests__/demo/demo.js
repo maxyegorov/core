@@ -16,6 +16,7 @@
  * built-in dev server (run `npm start`)
  */
 
+import { createTheme, ThemeProvider } from '@mui/material';
 import React from 'react';
 import { render } from 'react-dom';
 
@@ -35,7 +36,6 @@ import {
   HidingColumns,
   Resizable,
   ResizableTableWidthVariable,
-  EditableRowDateColumnIssue,
   PersistentGroupings,
   DataSwitcher,
   DetailPanelIssuesProgrammaticallyHidingWhenOpen,
@@ -48,15 +48,19 @@ import {
   FixedColumnWithEdit
 } from './demo-components';
 import { I1353, I1941, I122 } from './demo-components/RemoteData';
-import { Table, TableCell, TableRow, Paper } from '@material-ui/core';
-import TableHead from '@material-ui/core/TableHead';
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import { MTableScrollbar } from '../../src/components';
+
+let direction = 'ltr';
+const theme = createTheme({
+  direction: direction,
+  palette: {
+    type: 'light'
+  }
+});
 
 module.hot.accept();
 
 render(
-  <div>
+  <ThemeProvider theme={theme}>
     <h1>DetailPanelRemounting</h1>
     <DetailPanelRemounting />
 
@@ -168,6 +172,6 @@ render(
     <TableWithNumberOfPagesAround />
     <h1>Fixed Column with Row Edits</h1>
     <FixedColumnWithEdit />
-  </div>,
+  </ThemeProvider>,
   document.querySelector('#app')
 );

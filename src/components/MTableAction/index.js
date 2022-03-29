@@ -1,9 +1,7 @@
 /* eslint-disable multiline-ternary */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
+import { Tooltip, IconButton, Icon } from '@mui/material';
 
 function MTableAction(props) {
   function render() {

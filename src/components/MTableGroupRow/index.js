@@ -1,7 +1,4 @@
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
-import IconButton from '@material-ui/core/IconButton';
-import Checkbox from '@material-ui/core/Checkbox';
+import { Checkbox, IconButton, TableRow, TableCell } from '@mui/material';
 import PropTypes from 'prop-types';
 import React from 'react';
 

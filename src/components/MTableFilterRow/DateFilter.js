@@ -1,12 +1,9 @@
 import React from 'react';
-import DateFnsUtils from '@date-io/date-fns';
 import { getLocalizedFilterPlaceHolder } from './utils';
-import {
-  DatePicker,
-  DateTimePicker,
-  MuiPickersUtilsProvider,
-  TimePicker
-} from '@material-ui/pickers';
+
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import { TimePicker, DateTimePicker, DatePicker } from '@mui/lab';
 
 function DateFilter({
   columnDef,
@@ -34,12 +31,9 @@ function DateFilter({
   }
 
   return (
-    <MuiPickersUtilsProvider
-      utils={DateFnsUtils}
-      locale={localization.dateTimePickerLocalization}
-    >
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
       {dateInputElement}
-    </MuiPickersUtilsProvider>
+    </LocalizationProvider>
   );
 }
 

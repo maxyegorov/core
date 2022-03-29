@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
-import Toolbar from '@material-ui/core/Toolbar';
-import Chip from '@material-ui/core/Chip';
-import Typography from '@material-ui/core/Typography';
+import { Typography, Chip, Toolbar } from '@mui/material';
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
@@ -62,9 +60,8 @@ function MTableGroupbar(props) {
           );
         }
       } else {
-        materialTableGroupings[
-          props.persistentGroupingsId
-        ] = persistentGroupings;
+        materialTableGroupings[props.persistentGroupingsId] =
+          persistentGroupings;
         localStorage.setItem(
           'material-table-groupings',
           JSON.stringify(materialTableGroupings)

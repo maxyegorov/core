@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { TableRow, TableCell } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { TableRow, TableCell } from '@mui/material';
+import { withStyles } from '@mui/styles';
 import { getStyle } from '@utils';
 import * as CommonValues from '@utils/common-values';
 import PropTypes from 'prop-types';

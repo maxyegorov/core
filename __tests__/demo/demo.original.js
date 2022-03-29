@@ -1,9 +1,8 @@
-import { Grid, MuiThemeProvider, Button } from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core';
+import { Grid, Button, ThemeProvider, createTheme } from '@mui/material';
 
 let direction = 'ltr';
 // direction = 'rtl';
-const theme = createMuiTheme({
+const theme = createTheme({
   direction: direction,
   palette: {
     type: 'light'
@@ -483,7 +482,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <MuiThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
           <div style={{ maxWidth: '100%', direction }}>
             <Grid container>
               <Grid item xs={12}>
@@ -678,7 +677,7 @@ class App extends Component {
               // />
             }
           </div>
-        </MuiThemeProvider>
+        </ThemeProvider>
       </>
     );
   }

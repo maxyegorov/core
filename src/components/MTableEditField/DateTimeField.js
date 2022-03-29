@@ -1,10 +1,11 @@
 import React from 'react';
-import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, DateTimePicker } from '@material-ui/pickers';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import { DateTimePicker } from '@mui/lab';
 
 function DateTimeField({ forwardedRef, ...props }) {
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils} locale={props.locale}>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DateTimePicker
         {...props}
         ref={forwardedRef}
@@ -21,7 +22,7 @@ function DateTimeField({ forwardedRef, ...props }) {
           'aria-label': `${props.columnDef.title}: press space to edit`
         }}
       />
-    </MuiPickersUtilsProvider>
+    </LocalizationProvider>
   );
 }
 

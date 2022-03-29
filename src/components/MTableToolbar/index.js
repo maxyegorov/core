@@ -1,13 +1,15 @@
-import Checkbox from '@material-ui/core/Checkbox';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import IconButton from '@material-ui/core/IconButton';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-import Toolbar from '@material-ui/core/Toolbar';
-import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
-import { lighten, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@mui/styles';
+import {
+  Checkbox,
+  InputAdornment,
+  IconButton,
+  Menu,
+  MenuItem,
+  TextField,
+  Toolbar,
+  Tooltip,
+  Typography
+} from '@mui/material';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
@@ -55,9 +57,9 @@ export function MTableToolbar(props) {
           About: column.customExport
           This bit of code checks if prop customExport in column is a function, and if it is then it
           uses that function to transform the data, this is useful in cases where a column contains
-          complex objects or array and it needs to be handled before it's passed to the exporter 
-          to avoid [object Object] output (e.g. to flatten data). 
-          Please note that it is also possible to transform data within under exportMenu 
+          complex objects or array and it needs to be handled before it's passed to the exporter
+          to avoid [object Object] output (e.g. to flatten data).
+          Please note that it is also possible to transform data within under exportMenu
           using a custom function (exportMenu.exportFunc) for each exporter.
           */
           if (typeof columnDef.customExport === 'function') {
@@ -414,7 +416,7 @@ export const styles = (theme) => ({
     theme.palette.type === 'light'
       ? {
           color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85)
+          backgroundColor: theme.palette.secondary.light
         }
       : {
           color: theme.palette.text.primary,

@@ -1,10 +1,11 @@
 import React from 'react';
-import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, TimePicker } from '@material-ui/pickers';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import { TimePicker } from '@mui/lab';
 
 function TimeField({ forwardedRef, ...props }) {
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils} locale={props.locale}>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
       <TimePicker
         {...props}
         ref={forwardedRef}
@@ -21,7 +22,7 @@ function TimeField({ forwardedRef, ...props }) {
           'aria-label': `${props.columnDef.title}: press space to edit`
         }}
       />
-    </MuiPickersUtilsProvider>
+    </LocalizationProvider>
   );
 }
 
